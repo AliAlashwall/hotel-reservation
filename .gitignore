@@ -1,0 +1,15 @@
+*.iml
+.gradle
+build/
+captures/
+.externalNativeBuild
+.cxx
+
+# Holds the LiteAPI key and the local SDK path. Never commit it.
+local.properties
+
+.idea/
+.DS_Store
+
+# Working notes for building the history. Not part of the deliverable.
+COMMITS.md
