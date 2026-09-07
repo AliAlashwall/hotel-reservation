@@ -1,0 +1,11 @@
+## Copy this file to local.properties and fill in both values.
+## local.properties is gitignored and must never be committed.
+
+# Path to your Android SDK.
+sdk.dir=/path/to/your/Android/sdk
+
+# LiteAPI sandbox key. Free, no credit card.
+# Sign up at https://nuitee.com, then Developers -> API Keys -> Sandbox key.
+# The app builds without it, but every network call returns 401 unauthorized,
+# which the app renders as a readable message rather than crashing.
+LITEAPI_KEY=sand_xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
