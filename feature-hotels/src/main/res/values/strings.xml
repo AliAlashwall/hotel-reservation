@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hotels_title">Hotels</string>
+    <string name="hotels_search_hint">Search hotels by name</string>
+    <string name="hotels_clear_search">Clear search</string>
+    <string name="hotels_filters">Filters</string>
+    <string name="hotels_filters_clear">Clear all</string>
+    <string name="hotels_filters_done">Show results</string>
+    <string name="hotels_empty_title">No hotels match your search</string>
+    <string name="hotels_empty_detail">Try a different name, or widen the city, rating and price filters.</string>
+    <string name="hotels_end_of_list">That is every hotel matching your search.</string>
+
+    <string name="filter_country">Country</string>
+    <string name="filter_city">City</string>
+    <string name="filter_city_any">Any city</string>
+    <string name="filter_min_rating">Minimum guest rating</string>
+    <string name="filter_rating_any">Any</string>
+    <string name="filter_rating_value">%1$s+</string>
+    <string name="filter_price">Price per night</string>
+    <string name="filter_price_any">Any price</string>
+    <string name="filter_price_range">%1$d to %2$d USD</string>
+    <string name="filter_price_note">Applied after prices load, because the hotel service ignores price parameters.</string>
+</resources>
