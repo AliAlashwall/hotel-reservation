@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Errors. Each says what happened and, where there is one, what to do next. -->
+    <string name="error_no_connection">No internet connection. Check your network and try again.</string>
+    <string name="error_timeout">The request took too long. Try again.</string>
+    <string name="error_unauthorized">The app is not authorised to reach the hotel service. Check that a LiteAPI key is set in local.properties.</string>
+    <string name="error_not_found">We could not find that hotel.</string>
+    <string name="error_no_availability">No rooms are available for these dates.</string>
+    <string name="error_malformed">The hotel service sent something we could not read.</string>
+    <string name="error_bad_request">That request was not accepted. Try changing your search.</string>
+    <string name="error_server">The hotel service is having trouble. Try again shortly.</string>
+    <string name="error_unknown">Something went wrong.</string>
+
+    <!-- Shared UI -->
+    <string name="action_retry">Retry</string>
+    <string name="action_back">Back</string>
+    <string name="cached_banner">Showing saved results</string>
+    <string name="cached_banner_detail">Last updated %1$s</string>
+    <string name="price_unavailable">Price unavailable</string>
+    <string name="per_night">per night</string>
+    <string name="reviews_count">%1$s (%2$d reviews)</string>
+    <plurals name="reviews_only">
+        <item quantity="one">%1$d review</item>
+        <item quantity="other">%1$d reviews</item>
+    </plurals>
+    <string name="add_to_favorites">Add to favourites</string>
+    <string name="remove_from_favorites">Remove from favourites</string>
+    <string name="loading_more">Loading more</string>
+
+</resources>
