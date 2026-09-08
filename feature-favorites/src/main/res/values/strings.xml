@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorites_title">Favourites</string>
+    <string name="favorites_empty_title">No favourites yet</string>
+    <string name="favorites_empty_detail">Tap the heart on any hotel to keep it here. Favourites stay available with no internet.</string>
+    <string name="favorites_offline_note">Available offline</string>
+</resources>
