@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id": "lp516fd",
+      "name": "Kempinski Nile Hotel, Cairo",
+      "city": "Cairo",
+      "country": "eg",
+      "address": "12 Ahmed Ragheb Street",
+      "main_photo": "https://static.cupid.travel/hotels/616913606.jpg",
+      "thumbnail": "https://static.cupid.travel/hotels/thumbnail/616913606.jpg",
+      "stars": 5,
+      "rating": 9.6,
+      "reviewCount": 4207,
+      "currency": "USD"
+    },
+    {
+      "id": "lp19ea6",
+      "name": "Cairo Marriott Hotel",
+      "city": "Cairo",
+      "country": "eg",
+      "address": "16 Saray El Gezira",
+      "main_photo": "https://static.cupid.travel/hotels/434732969.jpg",
+      "thumbnail": "https://static.cupid.travel/hotels/thumbnail/434732969.jpg",
+      "stars": 5,
+      "rating": 8.8,
+      "reviewCount": 6596,
+      "currency": "USD"
+    }
+  ],
+  "total": 4162,
+  "hotelIds": [
+    "lp516fd",
+    "lp19ea6"
+  ]
+}

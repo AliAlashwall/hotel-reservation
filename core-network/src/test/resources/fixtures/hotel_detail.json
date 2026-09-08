@@ -1,0 +1,52 @@
+{
+  "data": {
+    "id": "lp516fd",
+    "name": "Kempinski Nile Hotel, Cairo",
+    "city": "Cairo",
+    "country": "eg",
+    "address": "Cornich El Nile, 12 Ahmed Ragheb Street, Garden City",
+    "hotelDescription": "<p><strong>Luxurious Accommodation on the Shores of the Nile River</strong></p><p><strong>Opulent Rooms and Exceptional Services</strong><br>Indulge in free WiFi, high definition LCD TVs, and complimentary Coca Cola drinks in each room. Benefit from butler service, concierge, and a pillow menu for a personalized stay.</p><p><strong>Relaxation and Wellness</strong><br>Unwind at the full-service spa with hot tubs, steam rooms, saunas, and professional massages. Take a refreshing dip in the rooftop swimming pool overlooking the Nile.</p><p><strong>Culinary Delights and Entertainment</strong><br>Savor Ottoman, Italian, and international cuisine at the hotel's various restaurants and bars. Don't miss the Jazz Bar on Floor 10 for a memorable evening.</p><p>Experience luxury and comfort at Kempinski Nile Hotel. Book now for an unforgettable stay in Cairo.</p>",
+    "hotelImages": [
+      {
+        "url": "https://static.cupid.travel/hotels/c.jpg",
+        "urlHd": "https://static.cupid.travel/hotels/c-hd.jpg",
+        "order": 2
+      },
+      {
+        "url": "https://static.cupid.travel/hotels/a.jpg",
+        "urlHd": "https://static.cupid.travel/hotels/a-hd.jpg",
+        "order": 0
+      },
+      {
+        "url": "https://static.cupid.travel/hotels/b.jpg",
+        "urlHd": null,
+        "order": 1
+      }
+    ],
+    "main_photo": "https://static.cupid.travel/hotels/616913606.jpg",
+    "hotelFacilities": [
+      "Fitness facilities",
+      "WiFi available",
+      "Free WiFi",
+      "Non-smoking rooms",
+      "Air conditioning",
+      "Fitness center",
+      "Fitness facilities",
+      "  "
+    ],
+    "starRating": 5,
+    "rating": 9.6,
+    "reviewCount": 4207,
+    "location": {
+      "latitude": 30.038658,
+      "longitude": 31.230344
+    },
+    "checkinCheckoutTimes": {
+      "checkin_start": "03:00 PM",
+      "checkin_end": "08:00 PM",
+      "checkout": "12:00 PM",
+      "instructions": [],
+      "special_instructions": ""
+    }
+  }
+}

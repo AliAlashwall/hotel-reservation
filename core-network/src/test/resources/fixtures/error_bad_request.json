@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": 4002,
+    "description": "hotelId is missing or invalid",
+    "message": "required request field is missing or wrong input"
+  }
+}
