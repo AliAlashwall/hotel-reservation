@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="booking_title">Book your stay</string>
+    <string name="booking_check_in">Check-in</string>
+    <string name="booking_check_out">Check-out</string>
+    <string name="booking_pick_date">Select a date</string>
+    <string name="booking_rooms">Rooms</string>
+    <string name="booking_add_room">Add a room</string>
+    <string name="booking_remove_room">Remove a room</string>
+    <string name="booking_summary">Price summary</string>
+    <string name="booking_rate_breakdown">%1$s x %2$d night(s) x %3$d room(s)</string>
+    <string name="booking_base">Base price</string>
+    <string name="booking_vat">VAT (%1$s%%)</string>
+    <string name="booking_total">Total</string>
+    <string name="booking_confirm">Confirm booking</string>
+    <string name="booking_confirming">Confirming</string>
+
+    <string name="error_check_in_missing">Choose a check-in date.</string>
+    <string name="error_check_out_missing">Choose a check-out date.</string>
+    <string name="error_check_in_past">Check-in cannot be in the past.</string>
+    <string name="error_check_out_order">Check-out must be after check-in.</string>
+    <string name="error_stay_too_long">A stay cannot be longer than %1$d nights.</string>
+    <string name="error_rooms_too_many">You can book at most %1$d rooms.</string>
+    <string name="error_rooms_below_one">Book at least one room.</string>
+
+    <string name="price_changed_title">The price has changed</string>
+    <string name="price_changed_body">This hotel now costs %1$s for your dates instead of %2$s. Confirm again to book at the new price.</string>
+    <string name="price_changed_accept">Book at %1$s</string>
+    <string name="price_changed_cancel">Cancel</string>
+
+    <string name="confirmation_title">Booking confirmed</string>
+    <string name="confirmation_reference">Booking reference</string>
+    <string name="confirmation_dates">%1$s to %2$s</string>
+    <string name="confirmation_done">Done</string>
+    <string name="confirmation_missing">That booking could not be found.</string>
+</resources>
