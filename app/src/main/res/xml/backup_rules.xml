@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- The hotel cache is disposable and can be large, so it is not worth a user's
+         backup quota. Bookings and favourites live in the same database, so the whole
+         file is excluded and the README lists per-table backup as future work. -->
+    <exclude domain="database" path="hotel_reservation.db" />
+</full-backup-content>

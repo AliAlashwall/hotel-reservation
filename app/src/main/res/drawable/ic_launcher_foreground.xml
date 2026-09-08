@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A building with lit windows: the app mark. Drawn inside the 72dp safe zone of the
+     108dp adaptive icon canvas, so no mask can clip it. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#FFDDB3"
+        android:pathData="M36,32h36v46h-36z" />
+    <path
+        android:fillColor="#FFDDB3"
+        android:pathData="M30,78h48v6h-48z" />
+
+    <group>
+        <path android:fillColor="#006A5F" android:pathData="M42,40h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M52,40h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M62,40h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M42,52h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M52,52h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M62,52h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M42,64h6v7h-6z" />
+        <path android:fillColor="#006A5F" android:pathData="M62,64h6v7h-6z" />
+    </group>
+
+    <!-- Doorway -->
+    <path
+        android:fillColor="#006A5F"
+        android:pathData="M51,64h6v14h-6z" />
+
+    <!-- Awning over the entrance -->
+    <path
+        android:fillColor="#FFB95C"
+        android:pathData="M46,60h16l-3,4h-10z" />
+</vector>

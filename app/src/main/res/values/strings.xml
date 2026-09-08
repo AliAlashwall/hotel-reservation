@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hotel Reservation</string>
+    <string name="nav_hotels">Hotels</string>
+    <string name="nav_favorites">Favourites</string>
+</resources>
