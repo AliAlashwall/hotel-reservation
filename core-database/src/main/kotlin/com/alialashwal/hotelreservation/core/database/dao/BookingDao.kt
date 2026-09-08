@@ -14,7 +14,4 @@ interface BookingDao {
 
     @Query("SELECT * FROM bookings WHERE reference = :reference")
     fun observeByReference(reference: String): Flow<BookingEntity?>
-
-    @Query("SELECT * FROM bookings ORDER BY createdAtEpochMillis DESC")
-    fun observeAll(): Flow<List<BookingEntity>>
 }

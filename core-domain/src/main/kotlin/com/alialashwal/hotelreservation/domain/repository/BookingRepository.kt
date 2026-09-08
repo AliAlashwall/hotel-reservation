@@ -16,6 +16,4 @@ interface BookingRepository {
     suspend fun save(booking: Booking)
 
     fun observeBooking(reference: BookingReference): Flow<Booking?>
-
-    fun observeBookings(): Flow<List<Booking>>
 }

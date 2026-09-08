@@ -19,6 +19,4 @@ class FakeBookingRepository : BookingRepository {
 
     override fun observeBooking(reference: BookingReference): Flow<Booking?> =
         stored.map { list -> list.firstOrNull { it.reference == reference } }
-
-    override fun observeBookings(): Flow<List<Booking>> = stored
 }

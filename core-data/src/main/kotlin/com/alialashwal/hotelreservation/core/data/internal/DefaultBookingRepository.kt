@@ -18,7 +18,4 @@ class DefaultBookingRepository @Inject constructor(
 
     override fun observeBooking(reference: BookingReference): Flow<Booking?> =
         dao.observeByReference(reference.value).map { it?.toDomain() }
-
-    override fun observeBookings(): Flow<List<Booking>> =
-        dao.observeAll().map { rows -> rows.map { it.toDomain() } }
 }

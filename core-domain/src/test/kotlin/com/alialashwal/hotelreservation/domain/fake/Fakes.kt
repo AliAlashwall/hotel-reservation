@@ -49,13 +49,11 @@ class FakeBookingRepository : BookingRepository {
     val saved: List<Booking> get() = stored.value
 
     override suspend fun save(booking: Booking) {
-        stored.value = stored.value + booking
+        stored.value += booking
     }
 
     override fun observeBooking(reference: BookingReference): Flow<Booking?> =
         stored.map { bookings -> bookings.firstOrNull { it.reference == reference } }
-
-    override fun observeBookings(): Flow<List<Booking>> = stored
 
     fun clearForTest() {
         stored.value = emptyList()
