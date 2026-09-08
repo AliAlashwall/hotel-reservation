@@ -13,18 +13,15 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.ExposedDropdownMenuBox
-import androidx.compose.material3.ExposedDropdownMenuAnchorType
-import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
-import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.RangeSlider
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -87,82 +84,124 @@ internal fun FilterSheet(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CountryPicker(state: HotelListState, onIntent: (HotelListIntent) -> Unit) {
-    var expanded by remember { mutableStateOf(false) }
+    var open by remember { mutableStateOf(false) }
     val selected = state.availableCountries.firstOrNull { it.code == state.filters.countryCode }
 
     Column {
         Text(stringResource(R.string.filter_country), style = MaterialTheme.typography.labelLarge)
-        ExposedDropdownMenuBox(
-            expanded = expanded,
-            onExpandedChange = { expanded = it },
-            modifier = Modifier.padding(top = 8.dp),
+        OutlinedButton(
+            onClick = { open = true },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
         ) {
-            OutlinedTextField(
-                value = selected?.name ?: state.filters.countryCode,
-                onValueChange = {},
-                readOnly = true,
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
-                modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
-            )
-            ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-                LazyColumn(modifier = Modifier.heightIn(max = 320.dp)) {
-                    items(state.availableCountries, key = { it.code }) { country ->
-                        DropdownMenuItem(
-                            text = { Text(country.name) },
-                            onClick = {
-                                onIntent(HotelListIntent.CountrySelected(country.code))
-                                expanded = false
-                            },
-                        )
-                    }
-                }
-            }
+            Text(selected?.name ?: state.filters.countryCode)
         }
+    }
+
+    if (open) {
+        SelectionPickerSheet(
+            title = stringResource(R.string.filter_country),
+            items = state.availableCountries,
+            selectedValue = state.filters.countryCode,
+            itemText = { it.name },
+            itemValue = { it.code },
+            onDismiss = { open = false },
+            onSelect = { country ->
+                onIntent(HotelListIntent.CountrySelected(country.code))
+                open = false
+            },
+        )
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun CityPicker(state: HotelListState, onIntent: (HotelListIntent) -> Unit) {
-    var expanded by remember { mutableStateOf(false) }
+    var open by remember { mutableStateOf(false) }
+    val cityOptions = buildList {
+        add(CityOption(null, stringResource(R.string.filter_city_any)))
+        state.availableCities.forEach { city ->
+            add(CityOption(city, city))
+        }
+    }
 
     Column {
         Text(stringResource(R.string.filter_city), style = MaterialTheme.typography.labelLarge)
-        ExposedDropdownMenuBox(
-            expanded = expanded,
-            onExpandedChange = { expanded = it },
-            modifier = Modifier.padding(top = 8.dp),
+        OutlinedButton(
+            onClick = { open = true },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
         ) {
-            OutlinedTextField(
-                value = state.filters.city ?: stringResource(R.string.filter_city_any),
-                onValueChange = {},
-                readOnly = true,
-                trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded) },
-                modifier = Modifier.menuAnchor(ExposedDropdownMenuAnchorType.PrimaryNotEditable).fillMaxWidth(),
-            )
-            ExposedDropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.filter_city_any)) },
-                    onClick = {
-                        onIntent(HotelListIntent.CitySelected(null))
-                        expanded = false
-                    },
-                )
-                LazyColumn(modifier = Modifier.heightIn(max = 320.dp)) {
-                    items(state.availableCities, key = { it }) { city ->
-                        DropdownMenuItem(
-                            text = { Text(city) },
-                            onClick = {
-                                onIntent(HotelListIntent.CitySelected(city))
-                                expanded = false
-                            },
-                        )
+            Text(state.filters.city ?: stringResource(R.string.filter_city_any))
+        }
+    }
+
+    if (open) {
+        SelectionPickerSheet(
+            title = stringResource(R.string.filter_city),
+            items = cityOptions,
+            selectedValue = state.filters.city ?: "",
+            itemText = { it.label },
+            itemValue = { it.city ?: "" },
+            onDismiss = { open = false },
+            onSelect = { city ->
+                onIntent(HotelListIntent.CitySelected(city.city))
+                open = false
+            },
+        )
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun <T> SelectionPickerSheet(
+    title: String,
+    items: List<T>,
+    selectedValue: String,
+    itemText: (T) -> String,
+    itemValue: (T) -> String,
+    onDismiss: () -> Unit,
+    onSelect: (T) -> Unit,
+) {
+    ModalBottomSheet(onDismissRequest = onDismiss) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp)
+                .padding(bottom = 32.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Text(title, style = MaterialTheme.typography.titleLarge)
+            if (items.isEmpty()) {
+                Text("No options available", style = MaterialTheme.typography.bodyMedium)
+            } else {
+                LazyColumn(modifier = Modifier.heightIn(max = 420.dp)) {
+                    items(items, key = itemValue) { item ->
+                        val isSelected = itemValue(item) == selectedValue
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                        ) {
+                            RadioButton(
+                                selected = isSelected,
+                                onClick = { onSelect(item) },
+                            )
+                            Text(
+                                text = itemText(item),
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(start = 8.dp),
+                            )
+                        }
                     }
                 }
             }
         }
     }
 }
+
+private data class CityOption(
+    val city: String?,
+    val label: String,
+)
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
