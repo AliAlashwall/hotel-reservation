@@ -35,6 +35,6 @@ internal object CachePolicy {
      */
     const val RATE_PROBE_LEAD_DAYS: Long = 30
 
-    /** The app quotes one currency. Multi-currency is listed as future work in the README. */
+    /** The app quotes one currency. */
     const val CURRENCY: String = "USD"
 }
