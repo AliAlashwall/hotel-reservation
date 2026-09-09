@@ -142,8 +142,14 @@ interface HotelDao {
     }
 
     /**
-     * Favouriting must work on a hotel the cache is about to forget, so the row is
-     * written first if it is not there, then flagged.
+     * Flips the flag on an existing hotel row and returns the state it ended up in.
+     *
+     * Read and write are one transaction, so a page load running at the same time
+     * cannot read the old flag and write it back over the new one.
+     *
+     * The row is expected to already be there, and every screen that draws a heart is
+     * drawing a hotel it read out of this table. If it is missing the update matches
+     * no rows and the flag stays off.
      */
     @Transaction
     suspend fun toggleFavorite(hotelId: String): Boolean {
