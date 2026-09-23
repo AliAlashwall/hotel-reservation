@@ -38,7 +38,7 @@ internal suspend fun <T> apiCall(json: Json, block: suspend () -> T): Outcome<T>
         // Covers ConnectException, SSL failures and a socket closed mid-read. From the
         // user's side these are all "the network did not work".
         Outcome.Failure(AppError.NoConnection)
-    } catch (e: Throwable) {
+    } catch (e: Exception) {
         Outcome.Failure(AppError.Unknown(e))
     }
 
